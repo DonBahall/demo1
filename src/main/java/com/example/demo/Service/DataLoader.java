@@ -36,7 +36,7 @@ public class DataLoader {
     }
 
     public ResponseEntity<String> saveJsonFromArchive() throws IOException {
-        ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream("D:\\pep.zip"));
+        ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream("src/main/resources/pep.zip"));
         ZipEntry entry = zipInputStream.getNextEntry();
         if (entry != null && !entry.isDirectory() && entry.getName().endsWith(".json")) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(zipInputStream, StandardCharsets.UTF_8));
